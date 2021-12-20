@@ -26,6 +26,13 @@ server.use(cors())
 
 server.use('/api/classes', classesRouter)
 
+server.get('/', async (req, res) => {
+  res.json('Welcome!')
+})
+server.get('/api', async (req, res) => {
+  res.json("add /users to url to see all users")
+})
+
 server.get('/api/users', async (req, res) => {
   res.json(await getAllUsers())
 })

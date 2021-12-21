@@ -44,4 +44,9 @@ async function getInstructorClasses(user_id) {
     return classes
 }
 
-module.exports = { getAll, getById, getUserClasses, getInstructorClasses };
+async function addClass(newClass){
+  const [created] = await db('classes').insert(newClass).returning('*')
+  return created
+}
+
+module.exports = { getAll, getById, getUserClasses, getInstructorClasses, addClass };

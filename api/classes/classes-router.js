@@ -37,4 +37,13 @@ router.get("/:user_id/instructing", async (req, res, next) => {
     }
 })
 
+router.post("/", async (req, res, next) => {
+    try {
+        const newClass = await Classes.addClass(req.body)
+        res.status(201).json(newClass)
+    } catch(err){
+        next(err)
+    }
+})
+
 module.exports = router

@@ -20,5 +20,9 @@ server.get('/api', async (req, res) => {
   res.json("add /users to url to see all users")
 })
 
+server.use((err, req, res, next) => {
+  res.status(err.status || 500).json({ message: err.message, stack: err.stack})
+})
+
 
 module.exports = server

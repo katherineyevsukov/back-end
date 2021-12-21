@@ -37,4 +37,33 @@ router.get("/:user_id/instructing", async (req, res, next) => {
     }
 })
 
+router.post("/", async (req, res, next) => {
+    try {
+        const newClass = await Classes.addClass(req.body)
+        res.status(201).json(newClass)
+    } catch(err){
+        next(err)
+    }
+})
+
+router.delete('/:class_id', async (req, res, next) => {
+    try{
+       const numberDeleted = await Classes.removeClass(req.params.class_id)
+       res.status(200).json({message: `${numberDeleted} class(es) deleted successfully`})
+    } catch(err){
+        next(err)
+    }
+})
+
+router.post('/signup', async (req, res, next) => {
+    try{
+        const userClassList = await Classes.signupForClass(req.body)
+        res.status(200).json(userClassList)
+    }catch(err){
+        next(err)
+    }
+})
+
+
+
 module.exports = router

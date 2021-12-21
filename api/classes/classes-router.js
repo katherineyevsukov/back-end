@@ -55,4 +55,15 @@ router.delete('/:class_id', async (req, res, next) => {
     }
 })
 
+router.post('/signup', async (req, res, next) => {
+    try{
+        const userClassList = await Classes.signupForClass(req.body)
+        res.status(200).json(userClassList)
+    }catch(err){
+        next(err)
+    }
+})
+
+
+
 module.exports = router

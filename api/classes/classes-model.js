@@ -54,4 +54,10 @@ async function removeClass(class_id){
   return rowsDeleted
 }
 
-module.exports = { getAll, getById, getUserClasses, getInstructorClasses, addClass, removeClass };
+async function signupForClass({class_id, student_id}){
+  const [id] = await db('classes_students').insert({class_id, student_id}).returning('student_id')
+  const userClasses = await getUserClasses(id)
+  return userClasses
+}
+
+module.exports = { getAll, getById, getUserClasses, getInstructorClasses, addClass, removeClass, signupForClass };

@@ -273,4 +273,47 @@ _What you receive:_
 ]
 ```
 
+### [GET] /api/classes/:user_id/instructing
+
+**_RESTRICTED ENDPOINT_**
+
+- Get an array of classes a specific instructor is teaching
+  - _requires valid token in authorization header to access_
+- _(example uses "1" for **:user_id** in URL)_
+  _What you receive:_
+
+```json
+[
+    {
+        "username": "bob",
+        "class_id": 3,
+        "class_name": "80's at 8",
+        "class_duration": "1.5 hours",
+        "max_class_size": 25,
+        "class_date": "2021-11-19T05:00:00.000Z",
+        "start_time": "08:00:00",
+        "class_location": "Gym Z",
+        "class_type": "aerobics",
+        "class_intensity": "Advanced",
+        "class_instructor": 1,
+        "number_registered": 2
+    },
+    {
+        "username": "bob",
+        "class_id": 1,
+        "class_name": "Power Ranger Pilates",
+        "class_duration": "1 hour",
+        "max_class_size": 15,
+        "class_date": "2021-11-17T05:00:00.000Z",
+        "start_time": "08:00:00",
+        "class_location": "Central Park",
+        "class_type": "pilates",
+        "class_intensity": "Beginner",
+        "class_instructor": 1,
+        "number_registered": 1
+    }
+]
+```
+
+
 ##

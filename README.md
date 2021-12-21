@@ -217,4 +217,60 @@ _What you receive:_
 }
 ```
 
+### [GET] /api/classes/:user_id/attending
+
+**_RESTRICTED ENDPOINT_**
+
+- Get an array of classes a specific user is registered for
+  - _requires valid token in authorization header to access_
+- _(example uses "4" for **:user_id** in URL)_
+  _What you receive:_
+
+```json
+[
+    {
+        "user_id": 4,
+        "username": "joe",
+        "class_id": 2,
+        "class_name": "Boxing Basics",
+        "class_duration": "45 min",
+        "max_class_size": 12,
+        "class_date": "2021-12-22T05:00:00.000Z",
+        "start_time": "10:30:00",
+        "class_location": "YMCA",
+        "class_type": "boxing",
+        "class_intensity": "Beginner",
+        "class_instructor": 2
+    },
+    {
+        "user_id": 4,
+        "username": "joe",
+        "class_id": 4,
+        "class_name": "Sychronized Swimming",
+        "class_duration": "2 hours",
+        "max_class_size": 10,
+        "class_date": "2022-01-07T05:00:00.000Z",
+        "start_time": "16:45:00",
+        "class_location": "Community Pool",
+        "class_type": "swimming",
+        "class_intensity": "Intermediate",
+        "class_instructor": 2
+    },
+    {
+        "user_id": 4,
+        "username": "joe",
+        "class_id": 3,
+        "class_name": "80's at 8",
+        "class_duration": "1.5 hours",
+        "max_class_size": 25,
+        "class_date": "2021-11-19T05:00:00.000Z",
+        "start_time": "08:00:00",
+        "class_location": "Gym Z",
+        "class_type": "aerobics",
+        "class_intensity": "Advanced",
+        "class_instructor": 1
+    }
+]
+```
+
 ##

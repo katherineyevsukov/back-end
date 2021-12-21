@@ -46,4 +46,13 @@ router.post("/", async (req, res, next) => {
     }
 })
 
+router.delete('/:class_id', async (req, res, next) => {
+    try{
+       const numberDeleted = await Classes.removeClass(req.params.class_id)
+       res.status(200).json({message: `${numberDeleted} class(es) deleted successfully`})
+    } catch(err){
+        next(err)
+    }
+})
+
 module.exports = router

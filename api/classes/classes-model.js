@@ -49,4 +49,9 @@ async function addClass(newClass){
   return created
 }
 
-module.exports = { getAll, getById, getUserClasses, getInstructorClasses, addClass };
+async function removeClass(class_id){
+  const rowsDeleted = await db('classes').where('class_id', class_id).del()
+  return rowsDeleted
+}
+
+module.exports = { getAll, getById, getUserClasses, getInstructorClasses, addClass, removeClass };

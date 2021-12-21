@@ -321,6 +321,7 @@ _What you receive:_
 
 - Add information for a new class
   - _requires valid token in authorization header to access_
+  - _only an authorized instructor can add a class_
 
 _What you send:_
 

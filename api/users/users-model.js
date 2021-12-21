@@ -9,6 +9,12 @@ async function getById(user_id) {
   return user;
 }
 
+async function getBy(filter) {
+  const [user] = await db("users").where(filter);
+
+  return user;
+}
+
 async function insertUser(user) {
   // WITH POSTGRES WE CAN PASS A "RETURNING ARRAY" AS 2ND ARGUMENT TO knex.insert/update
   // AND OBTAIN WHATEVER COLUMNS WE NEED FROM THE NEWLY CREATED/UPDATED RECORD
@@ -22,4 +28,4 @@ async function insertUser(user) {
   return newUserObject; // { user_id: 7, username: 'foo', password: 'xxxxxxx' }
 }
 
-module.exports = { getAllUsers, getById, insertUser };
+module.exports = { getAllUsers, getById, insertUser, getBy };

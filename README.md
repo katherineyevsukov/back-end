@@ -435,6 +435,56 @@ _What you receive (list of all user's classes):_
 ]
 ```
 
+### [POST] /api/auth/register
 
+- Register a new user
+  - _username required (must be between 3 and 30 characters)_
+  - _password required (must be between 5 and 200 characters)_
+  - _role required (must be between 'client' or 'instructor'_
 
+_What you send:_
+
+```json client
+{
+  "username": "SampleUser",
+  "password": "password",
+  "role_type": "client"
+}
+```
+
+_What you receive:_
+
+```json
+{
+    "user_id": 7,
+    "username": "SampleUser",
+    "password": "$2a$08$DuNScRplwZy4kknDv5I/6.hyTUBJ27YEM1VK57bZehPifHrurU.1.",
+    "role_type": "client"
+}
+```
+
+### [POST] /api/auth/login
+
+- Login
+  - _username and password required_
+  - _provides a newly created token_
+
+_What you send:_
+
+```json
+{
+  "username": "SampleUser",
+  "password": "password"
+}
+```
+
+_What you receive:_
+
+```json
+{
+    "message": "welcome back sampleUser",
+    "role_type": "client",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0Ijo3LCJ1c2VybmFtZSI6InN1ZSIsInJvbGUiOiJpbnN0cnVjdG9yIiwiaWF0IjoxNjQwMTIyNDIwLCJleHAiOjE2NDAyMDg4MjB9.fo9Xsm6pYP3phZjWbR-uhvwMFDYpMvAmu6URqD_3UOU"
+}
+```
 ##

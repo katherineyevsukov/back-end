@@ -356,5 +356,85 @@ _What you receive:_
 }
 ```
 
+### [POST] /api/classes/signup
+
+**_RESTRICTED ENDPOINT_**
+
+- user can signup for a new class
+  - _requires valid token in authorization header to access_
+
+_What you send:_
+
+```json
+{
+    "class_id": 4, 
+    "student_id": 3
+}
+```
+
+_What you receive (list of all user's classes):_
+
+```json
+[
+    {
+        "user_id": 3,
+        "username": "kat",
+        "class_id": 1,
+        "class_name": "Power Ranger Pilates",
+        "class_duration": "1 hour",
+        "max_class_size": 15,
+        "class_date": "2021-11-17T05:00:00.000Z",
+        "start_time": "08:00:00",
+        "class_location": "Central Park",
+        "class_type": "pilates",
+        "class_intensity": "Beginner",
+        "class_instructor": 1
+    },
+    {
+        "user_id": 3,
+        "username": "kat",
+        "class_id": 3,
+        "class_name": "80's at 8",
+        "class_duration": "1.5 hours",
+        "max_class_size": 25,
+        "class_date": "2021-11-19T05:00:00.000Z",
+        "start_time": "08:00:00",
+        "class_location": "Gym Z",
+        "class_type": "aerobics",
+        "class_intensity": "Advanced",
+        "class_instructor": 1
+    },
+    {
+        "user_id": 3,
+        "username": "kat",
+        "class_id": 5,
+        "class_name": "Tik Tok Zumba",
+        "class_duration": "30 min",
+        "max_class_size": 20,
+        "class_date": "2022-02-08T05:00:00.000Z",
+        "start_time": "18:30:00",
+        "class_location": "Gym Z",
+        "class_type": "dance",
+        "class_intensity": "Advanced",
+        "class_instructor": 2
+    },
+    {
+        "user_id": 3,
+        "username": "kat",
+        "class_id": 4,
+        "class_name": "Sychronized Swimming",
+        "class_duration": "2 hours",
+        "max_class_size": 10,
+        "class_date": "2022-01-07T05:00:00.000Z",
+        "start_time": "16:45:00",
+        "class_location": "Community Pool",
+        "class_type": "swimming",
+        "class_intensity": "Intermediate",
+        "class_instructor": 2
+    }
+]
+```
+
+
 
 ##

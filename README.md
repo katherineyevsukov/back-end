@@ -315,5 +315,45 @@ _What you receive:_
 ]
 ```
 
+### [POST] /api/classes/add
+
+**_RESTRICTED ENDPOINT_**
+
+- Add information for a new class
+  - _requires valid token in authorization header to access_
+
+_What you send:_
+
+```json
+{
+    "class_name": "Kardio Kings",
+    "class_duration": "45 mins",
+    "max_class_size": 20,
+    "class_date": "2021-12-25T05:00:00.000Z",
+    "start_time": "10:00:00",
+    "class_location": "Central Park",
+    "class_type": "cardio",
+    "class_intensity": "Intermediate",
+    "class_instructor": 2
+}
+```
+
+_What you receive:_
+
+```json
+{
+    "class_id": 6,
+    "class_name": "Kardio Kings",
+    "class_duration": "45 mins",
+    "max_class_size": 20,
+    "class_date": "2021-12-25T05:00:00.000Z",
+    "start_time": "10:00:00",
+    "class_location": "Central Park",
+    "class_type": "cardio",
+    "class_intensity": "Intermediate",
+    "class_instructor": 2
+}
+```
+
 
 ##

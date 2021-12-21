@@ -93,12 +93,13 @@ _What you receive:_
 ]
 ```
 
-### [GET] /api/user/
+### [GET] /api/user/:user_id
 
 **_RESTRICTED ENDPOINT_**
 
 - Get information on a specific user
   - _requires valid token in authorization header to access_
+  - _(example uses "1" for **:user_id** in URL)_
 
 _What you receive:_
 

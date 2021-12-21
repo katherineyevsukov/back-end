@@ -1,7 +1,7 @@
 const db = require('./../data/db-config')
 
 async function getAll(){
-    const classes = await db('classes').limit(3)
+    const classes = await db('classes')
     return classes
 }
 

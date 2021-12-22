@@ -1,6 +1,7 @@
 const router = require('express').Router()
 const Users = require('./users-model')
 
+
 router.get('/', async (req, res) => {
     res.json(await Users.getAllUsers())
   })

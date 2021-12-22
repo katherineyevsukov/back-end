@@ -479,6 +479,31 @@ _What you receive (list of all user's classes):_
 ]
 ```
 
+### [DELETE] /api/classes/signup/cancel
+
+**_RESTRICTED ENDPOINT_**
+
+
+- User can cancel their signup for a class
+  - _requires valid token in authorization header to access_
+    - _only an authorized instructor can delete a class_
+
+    _What you send:_
+
+```json
+{
+    "class_id": 3,
+    "student_id": 3
+}
+
+_What you receive:_
+
+```json
+{
+    "message": "1 class(es) dropped successfully"
+}
+```
+
 ### [DELETE] /api/classes/:class_id
 
 **_RESTRICTED ENDPOINT_**

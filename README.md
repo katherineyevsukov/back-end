@@ -508,6 +508,8 @@ _What you receive:_
  - _only an authorized instructor can edit a class_
   _What you send (any changes you would like to make):_
 
+  _What you send:_
+
 ```json
 {
   "max_class_size": 15,

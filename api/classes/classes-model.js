@@ -1,3 +1,4 @@
+const { crossOriginResourcePolicy } = require("helmet");
 const db = require("./../data/db-config");
 
 async function getAll() {
@@ -59,6 +60,13 @@ async function editClass(id, changes) {
   return updatedClass;
 }
 
+async function dropClass(obj){
+  const rowsDeleted = await db('classes_students').where({class_id: obj.class_id, student_id: obj.student_id}).del()
+  return rowsDeleted
+}
+
+
+
 module.exports = {
   getAll,
   getById,
@@ -68,4 +76,5 @@ module.exports = {
   removeClass,
   signupForClass,
   editClass,
+  dropClass
 };

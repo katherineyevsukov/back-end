@@ -18,20 +18,20 @@ router.post("/register", async (req, res, next) => {
 
 router.post("/login", async (req, res, next) => {
   const { username, password } = req.body;
-  try{
-    const user = await User.getBy({ username })
-    if (user && bcrypt.compareSync(password, user.password)){
-      const token = buildToken(user)
+  try {
+    const user = await User.getBy({ username });
+    if (user && bcrypt.compareSync(password, user.password)) {
+      const token = buildToken(user);
       res.status(200).json({
         message: `welcome back ${user.username}`,
         role_type: user.role_type,
-        token
-      })
+        token,
+      });
     } else {
-      next({ status: 401, message: 'Invalid Credentials' })
+      next({ status: 401, message: "Invalid Credentials" });
     }
-  }catch(err){
-    next(err)
+  } catch (err) {
+    next(err);
   }
 });
 

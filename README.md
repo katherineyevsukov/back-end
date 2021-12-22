@@ -501,7 +501,7 @@ _What you receive:_
 
 **_RESTRICTED ENDPOINT_**
 
-- _where :id is class_id (example uses "2" for **:class_id** in URL)_
+- _where :class_id is class_id (example uses "3" for **:class_id** in URL)_
 
 - Edits given values of a specific class
   - _requires valid token in authorization header to access_

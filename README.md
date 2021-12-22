@@ -506,9 +506,9 @@ _What you receive:_
 - Edits given values of a specific class
   - _requires valid token in authorization header to access_
  - _only an authorized instructor can edit a class_
-  _What you send (any changes you would like to make):_
 
-  _What you send:_
+
+  _What you send (any changes you would like to make):_
 
 ```json
 {

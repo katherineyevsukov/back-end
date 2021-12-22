@@ -360,7 +360,7 @@ _What you receive:_
 ]
 ```
 
-### [POST] /api/classes/add
+### [POST] /api/classes
 
 **_RESTRICTED ENDPOINT_**
 
@@ -478,6 +478,23 @@ _What you receive (list of all user's classes):_
         "class_instructor": 2
     }
 ]
+```
+
+### [DELETE] /api/classes/:class_id
+
+**_RESTRICTED ENDPOINT_**
+- _where :class_id is class_id (example uses "6" for **:class_id** in URL)_
+
+- Deletes specific class
+  - _requires valid token in authorization header to access_
+    - _only an authorized instructor can delete a class_
+
+_What you receive:_
+
+```json
+{
+    "message": "1 class(es) deleted successfully"
+}
 ```
 
 

@@ -54,10 +54,8 @@ async function signupForClass({ class_id, student_id }) {
 }
 
 async function editClass(id, changes) {
-  const [class_id] = await db("classes")
-    .where("class_id", id)
-    .update(changes, ["class_id"]);
-  const updatedClass = await getById(class_id);
+  await db("classes").where("class_id", id).update(changes);
+  const updatedClass = await getById(id);
   return updatedClass;
 }
 

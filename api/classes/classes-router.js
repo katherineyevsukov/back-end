@@ -64,6 +64,15 @@ router.post('/signup', async (req, res, next) => {
     }
 })
 
+router.put("/:class_id", async (req, res, next) => {
+    try{
+        const updatedClass = await Classes.editClass(parseInt(req.params.class_id), req.body)
+        res.status(200).json(updatedClass)
+    } catch(err){
+        next(err)
+    }
+})
+
 
 
 module.exports = router

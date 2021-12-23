@@ -41,7 +41,7 @@
 - Register a new user
   - _username required (must be between 3 and 30 characters)_
   - _password required (must be between 5 and 200 characters)_
-  - _role required (must be between 'client' or 'instructor'_
+  - _role required (must be either 'client' or 'instructor')_
 
 _What you send:_
 

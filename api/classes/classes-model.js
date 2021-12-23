@@ -1,4 +1,3 @@
-const { crossOriginResourcePolicy } = require("helmet");
 const db = require("./../data/db-config");
 
 async function getAll() {
